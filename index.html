@@ -61,29 +61,29 @@ body {
 .card {
     margin-top: 20px;
     padding: 20px;
+    border: 1px solid var(--gray);
     border-radius: 10px;
     background: white;
-    border: 1px solid var(--gray);
 }
 
 .blue-card {
-    background: var(--light-blue);
     border-left: 6px solid var(--blue);
+    background: var(--light-blue);
 }
 
 .green-card {
-    background: var(--light-green);
     border-left: 6px solid var(--green);
+    background: var(--light-green);
 }
 
 .yellow-card {
-    background: var(--light-yellow);
     border-left: 6px solid var(--yellow);
+    background: var(--light-yellow);
 }
 
 .purple-card {
-    background: var(--light-purple);
     border-left: 6px solid var(--purple);
+    background: var(--light-purple);
 }
 
 .section-title {
@@ -102,10 +102,10 @@ body {
 .problem {
     margin-top: 16px;
     padding: 18px;
-    background: var(--light-gray);
     border: 1px solid var(--gray);
     border-left: 6px solid var(--blue);
     border-radius: 9px;
+    background: var(--light-gray);
 }
 
 .problem.green {
@@ -127,9 +127,9 @@ body {
 
 .math-display {
     margin: 18px 0;
+    overflow-x: auto;
     text-align: center;
     font-size: 23px;
-    overflow-x: auto;
 }
 
 .fraction {
@@ -148,6 +148,12 @@ body {
 .fraction .bottom {
     display: block;
     padding: 3px 10px 0;
+}
+
+.radical {
+    display: inline-block;
+    border-top: 2px solid var(--text);
+    padding: 2px 6px;
 }
 
 .field-row {
@@ -202,8 +208,8 @@ button:disabled {
 }
 
 .submit-area {
-    text-align: center;
     margin-top: 20px;
+    text-align: center;
 }
 
 .feedback {
@@ -217,8 +223,8 @@ button:disabled {
     display: none;
     margin-top: 20px;
     padding: 22px;
-    border-radius: 10px;
     border-left: 6px solid var(--green);
+    border-radius: 10px;
     background: var(--light-green);
 }
 
@@ -229,8 +235,8 @@ button:disabled {
 
 .completion table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 16px;
+    border-collapse: collapse;
     background: white;
 }
 
@@ -250,16 +256,11 @@ button:disabled {
 .screenshot-reminder {
     margin-top: 18px;
     padding: 16px;
+    border-radius: 8px;
     background: var(--navy);
     color: white;
-    border-radius: 8px;
     text-align: center;
     font-weight: bold;
-}
-
-.small-note {
-    color: #52616b;
-    font-size: 14px;
 }
 
 @media (max-width: 760px) {
@@ -305,7 +306,7 @@ button:disabled {
     </header>
 
     <section class="card blue-card">
-        <h2 style="margin-top:0; color:#0f2d44;">Prove It! Directions</h2>
+        <h2 style="margin-top: 0; color: #0f2d44;">Prove It! Directions</h2>
 
         <p>Complete every part independently. This activity does not provide hints or answer checks while you work.</p>
 
@@ -323,7 +324,7 @@ button:disabled {
     </section>
 
     <section class="card yellow-card">
-        <h2 style="margin-top:0; color:#0f2d44;">Academic Integrity Reminder</h2>
+        <h2 style="margin-top: 0; color: #0f2d44;">Academic Integrity Reminder</h2>
 
         <p>This is your mastery demonstration. Complete the activity using your own notes, reasoning, and mathematical work.</p>
 
@@ -348,7 +349,7 @@ button:disabled {
                     <span class="bottom">x − 2</span>
                 </span>
 
-                <span style="padding:0 12px;">+</span>
+                <span style="padding: 0 12px;">+</span>
 
                 <span class="fraction">
                     <span class="top">2</span>
@@ -389,37 +390,43 @@ button:disabled {
 
     <section class="card">
         <div class="section-title">
-            <h2>Part 2 — Subtract Rational Expressions</h2>
+            <h2>Part 2 — Rational-Expression Operations</h2>
         </div>
 
-        <div class="problem purple">
-            <h3>Problem 2</h3>
-
-            <p>Subtract, simplify completely, and state all restrictions.</p>
+        <div class="problem yellow">
+            <h3>Problem 2A — Choose the Process</h3>
 
             <div class="math-display">
                 <span class="fraction">
-                    <span class="top">4</span>
-                    <span class="bottom">x − 1</span>
+                    <span class="top">x² − 25</span>
+                    <span class="bottom">x + 3</span>
                 </span>
 
-                <span style="padding:0 12px;">−</span>
+                <span style="padding: 0 12px;">÷</span>
 
                 <span class="fraction">
-                    <span class="top">x + 1</span>
-                    <span class="bottom">x² − 1</span>
+                    <span class="top">x − 5</span>
+                    <span class="bottom">2x</span>
                 </span>
             </div>
 
             <div class="field-row">
-                <label for="p2factored">Factored denominator:</label>
-                <input id="p2factored" type="text" placeholder="Enter the factorization" autocomplete="off">
-            </div>
+                <label for="p2process">What process should be used first?</label>
 
-            <div class="field-row">
-                <label for="p2numerator">Combined numerator:</label>
-                <input id="p2numerator" type="text" placeholder="Enter the numerator" autocomplete="off">
+                <select id="p2process">
+                    <option value="">Choose a process</option>
+                    <option value="lcd">Find the LCD</option>
+                    <option value="factor">Factor and cancel</option>
+                    <option value="reciprocal">Multiply by the reciprocal</option>
+                    <option value="square">Square both sides</option>
+                </select>
             </div>
+        </div>
+
+        <div class="problem green">
+            <h3>Problem 2B — Simplify</h3>
+
+            <p>Complete the division problem from Problem 2A.</p>
 
             <div class="field-row">
                 <label for="p2final">Final expression:</label>
@@ -437,6 +444,12 @@ button:disabled {
                 <span>x ≠</span>
                 <input id="p2r2" type="text" placeholder="value" autocomplete="off">
             </div>
+
+            <div class="field-row">
+                <label for="p2r3">Restriction 3:</label>
+                <span>x ≠</span>
+                <input id="p2r3" type="text" placeholder="value" autocomplete="off">
+            </div>
         </div>
     </section>
 
@@ -444,65 +457,91 @@ button:disabled {
 
     <section class="card">
         <div class="section-title">
-            <h2>Part 3 — Rational-Expression Operations</h2>
-        </div>
-
-        <div class="problem yellow">
-            <h3>Problem 3A — Choose the Process</h3>
-
-            <div class="math-display">
-                <span class="fraction">
-                    <span class="top">x² − 25</span>
-                    <span class="bottom">x + 3</span>
-                </span>
-
-                <span style="padding:0 12px;">÷</span>
-
-                <span class="fraction">
-                    <span class="top">x − 5</span>
-                    <span class="bottom">2x</span>
-                </span>
-            </div>
-
-            <div class="field-row">
-                <label for="p3process">What process should be used first?</label>
-
-                <select id="p3process">
-                    <option value="">Choose a process</option>
-                    <option value="lcd">Find the LCD</option>
-                    <option value="factor">Factor and cancel</option>
-                    <option value="reciprocal">Multiply by the reciprocal</option>
-                    <option value="square">Square both sides</option>
-                </select>
-            </div>
+            <h2>Part 3 — Solve Rational Equations</h2>
         </div>
 
         <div class="problem green">
-            <h3>Problem 3B — Simplify</h3>
+            <h3>Problem 3A — Easy</h3>
 
-            <p>Complete the division problem from Problem 3A.</p>
+            <div class="math-display">
+                <span class="fraction">
+                    <span class="top">8</span>
+                    <span class="bottom">x + 1</span>
+                </span>
 
-            <div class="field-row">
-                <label for="p3final">Final expression:</label>
-                <input id="p3final" type="text" placeholder="Enter the simplified expression" autocomplete="off">
+                <span style="padding: 0 12px;">=</span>
+
+                4
             </div>
 
             <div class="field-row">
-                <label for="p3r1">Restriction 1:</label>
+                <label for="p3ar">Restriction:</label>
                 <span>x ≠</span>
-                <input id="p3r1" type="text" placeholder="value" autocomplete="off">
+                <input id="p3ar" type="text" placeholder="value" autocomplete="off">
             </div>
 
             <div class="field-row">
-                <label for="p3r2">Restriction 2:</label>
-                <span>x ≠</span>
-                <input id="p3r2" type="text" placeholder="value" autocomplete="off">
+                <label for="p3acleared">Equation after clearing the denominator:</label>
+                <input id="p3acleared" type="text" placeholder="Enter the equation" autocomplete="off">
             </div>
 
             <div class="field-row">
-                <label for="p3r3">Restriction 3:</label>
+                <label for="p3asolution">Solution:</label>
+                <span>x =</span>
+                <input id="p3asolution" type="text" placeholder="value" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="problem purple">
+            <h3>Problem 3B — Moderate</h3>
+
+            <div class="math-display">
+                <span class="fraction">
+                    <span class="top">1</span>
+                    <span class="bottom">x</span>
+                </span>
+
+                <span style="padding: 0 10px;">+</span>
+
+                <span class="fraction">
+                    <span class="top">1</span>
+                    <span class="bottom">x + 2</span>
+                </span>
+
+                <span style="padding: 0 10px;">=</span>
+
+                <span class="fraction">
+                    <span class="top">3</span>
+                    <span class="bottom">x(x + 2)</span>
+                </span>
+            </div>
+
+            <div class="field-row">
+                <label for="p3br1">Restriction 1:</label>
                 <span>x ≠</span>
-                <input id="p3r3" type="text" placeholder="value" autocomplete="off">
+                <input id="p3br1" type="text" placeholder="value" autocomplete="off">
+            </div>
+
+            <div class="field-row">
+                <label for="p3br2">Restriction 2:</label>
+                <span>x ≠</span>
+                <input id="p3br2" type="text" placeholder="value" autocomplete="off">
+            </div>
+
+            <div class="field-row">
+                <label for="p3blcd">LCD:</label>
+                <input id="p3blcd" type="text" placeholder="Enter the LCD" autocomplete="off">
+            </div>
+
+            <div class="field-row">
+                <label for="p3bcleared">Equation after clearing denominators:</label>
+                <input id="p3bcleared" type="text" placeholder="Enter the equation" autocomplete="off">
+            </div>
+
+            <div class="field-row">
+                <label for="p3bsolution">Solution:</label>
+                <span>x =</span>
+                <input id="p3bsolution" type="text" placeholder="value or fraction" autocomplete="off">
             </div>
         </div>
     </section>
@@ -511,32 +550,19 @@ button:disabled {
 
     <section class="card">
         <div class="section-title">
-            <h2>Part 4 — Solve Rational Equations</h2>
+            <h2>Part 4 — Solve Radical Equations</h2>
         </div>
 
         <div class="problem green">
             <h3>Problem 4A — Easy</h3>
 
             <div class="math-display">
-                <span class="fraction">
-                    <span class="top">8</span>
-                    <span class="bottom">x + 1</span>
-                </span>
-
-                <span style="padding:0 12px;">=</span>
-
-                4
+                √<span class="radical">x + 8</span> = 6
             </div>
 
             <div class="field-row">
-                <label for="p4ar">Restriction:</label>
-                <span>x ≠</span>
-                <input id="p4ar" type="text" placeholder="value" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p4acleared">Equation after clearing the denominator:</label>
-                <input id="p4acleared" type="text" placeholder="Enter the equation" autocomplete="off">
+                <label for="p4asquared">Equation after squaring:</label>
+                <input id="p4asquared" type="text" placeholder="Enter the equation" autocomplete="off">
             </div>
 
             <div class="field-row">
@@ -547,90 +573,39 @@ button:disabled {
         </div>
 
         <div class="problem purple">
-            <h3>Problem 4B — Medium</h3>
+            <h3>Problem 4B — Moderate</h3>
 
             <div class="math-display">
-                <span class="fraction">
-                    <span class="top">3</span>
-                    <span class="bottom">x</span>
-                </span>
-
-                <span style="padding:0 10px;">−</span>
-
-                <span class="fraction">
-                    <span class="top">2</span>
-                    <span class="bottom">x − 2</span>
-                </span>
-
-                <span style="padding:0 10px;">=</span>
-
-                <span class="fraction">
-                    <span class="top">2</span>
-                    <span class="bottom">x(x − 2)</span>
-                </span>
+                √<span class="radical">2x + 8</span> = x
             </div>
 
             <div class="field-row">
-                <label for="p4br1">Restriction 1:</label>
-                <span>x ≠</span>
-                <input id="p4br1" type="text" placeholder="value" autocomplete="off">
+                <label for="p4bsquared">Equation after squaring:</label>
+                <input id="p4bsquared" type="text" placeholder="Enter the equation" autocomplete="off">
             </div>
 
             <div class="field-row">
-                <label for="p4br2">Restriction 2:</label>
-                <span>x ≠</span>
-                <input id="p4br2" type="text" placeholder="value" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p4blcd">LCD:</label>
-                <input id="p4blcd" type="text" placeholder="Enter the LCD" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p4bcleared">Equation after clearing denominators:</label>
-                <input id="p4bcleared" type="text" placeholder="Enter the equation" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p4bsolution">Solution:</label>
+                <label for="p4bpossible1">Possible solution 1:</label>
                 <span>x =</span>
-                <input id="p4bsolution" type="text" placeholder="value or fraction" autocomplete="off">
-            </div>
-        </div>
-
-        <div class="problem yellow">
-            <h3>Problem 4C — Restricted Value</h3>
-
-            <div class="math-display">
-                <span class="fraction">
-                    <span class="top">x + 5</span>
-                    <span class="bottom">x − 5</span>
-                </span>
-
-                <span style="padding:0 12px;">=</span>
-
-                <span class="fraction">
-                    <span class="top">10</span>
-                    <span class="bottom">x − 5</span>
-                </span>
+                <input id="p4bpossible1" type="text" placeholder="value" autocomplete="off">
             </div>
 
             <div class="field-row">
-                <label for="p4cr">Restriction:</label>
-                <span>x ≠</span>
-                <input id="p4cr" type="text" placeholder="value" autocomplete="off">
+                <label for="p4bpossible2">Possible solution 2:</label>
+                <span>x =</span>
+                <input id="p4bpossible2" type="text" placeholder="value" autocomplete="off">
             </div>
 
             <div class="field-row">
-                <label for="p4cresult">Final result:</label>
+                <label for="p4bvalid">Valid solution:</label>
+                <span>x =</span>
+                <input id="p4bvalid" type="text" placeholder="value" autocomplete="off">
+            </div>
 
-                <select id="p4cresult">
-                    <option value="">Choose the final result</option>
-                    <option value="x5">x = 5</option>
-                    <option value="nosolution">No solution</option>
-                    <option value="allreal">All real numbers</option>
-                </select>
+            <div class="field-row">
+                <label for="p4bextraneous">Extraneous solution:</label>
+                <span>x =</span>
+                <input id="p4bextraneous" type="text" placeholder="value" autocomplete="off">
             </div>
         </div>
     </section>
@@ -639,79 +614,15 @@ button:disabled {
 
     <section class="card">
         <div class="section-title">
-            <h2>Part 5 — Solve Radical Equations</h2>
-        </div>
-
-        <div class="problem green">
-            <h3>Problem 5A — Easy</h3>
-
-            <div class="math-display">
-                √<span style="border-top:2px solid #1f2933; padding:2px 6px;">x + 8</span> = 6
-            </div>
-
-            <div class="field-row">
-                <label for="p5asquared">Equation after squaring:</label>
-                <input id="p5asquared" type="text" placeholder="Enter the equation" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p5asolution">Solution:</label>
-                <span>x =</span>
-                <input id="p5asolution" type="text" placeholder="value" autocomplete="off">
-            </div>
-        </div>
-
-        <div class="problem purple">
-            <h3>Problem 5B — Medium</h3>
-
-            <div class="math-display">
-                √<span style="border-top:2px solid #1f2933; padding:2px 6px;">2x + 8</span> = x
-            </div>
-
-            <div class="field-row">
-                <label for="p5bsquared">Equation after squaring:</label>
-                <input id="p5bsquared" type="text" placeholder="Enter the equation" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p5bpossible1">Possible solution 1:</label>
-                <span>x =</span>
-                <input id="p5bpossible1" type="text" placeholder="value" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p5bpossible2">Possible solution 2:</label>
-                <span>x =</span>
-                <input id="p5bpossible2" type="text" placeholder="value" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p5bvalid">Valid solution:</label>
-                <span>x =</span>
-                <input id="p5bvalid" type="text" placeholder="value" autocomplete="off">
-            </div>
-
-            <div class="field-row">
-                <label for="p5bextraneous">Extraneous solution:</label>
-                <span>x =</span>
-                <input id="p5bextraneous" type="text" placeholder="value" autocomplete="off">
-            </div>
-        </div>
-    </section>
-
-    <!-- PART 6 -->
-
-    <section class="card">
-        <div class="section-title">
-            <h2>Part 6 — Compare the Equation Types</h2>
+            <h2>Part 5 — Compare the Equation Types</h2>
         </div>
 
         <div class="problem yellow">
-            <h3>Problem 6A</h3>
+            <h3>Problem 5A</h3>
 
             <p>What is the most appropriate first step when solving a rational equation containing several denominators?</p>
 
-            <select id="p6a">
+            <select id="p5a">
                 <option value="">Choose an answer</option>
                 <option value="square">Square both sides</option>
                 <option value="lcd">Multiply every term by the LCD</option>
@@ -721,11 +632,11 @@ button:disabled {
         </div>
 
         <div class="problem green">
-            <h3>Problem 6B</h3>
+            <h3>Problem 5B</h3>
 
             <p>Why must possible solutions be checked in the original radical equation?</p>
 
-            <select id="p6b">
+            <select id="p5b">
                 <option value="">Choose an answer</option>
                 <option value="denominator">A denominator may become zero</option>
                 <option value="extraneous">Squaring can create an extraneous solution</option>
@@ -735,11 +646,11 @@ button:disabled {
         </div>
 
         <div class="problem purple">
-            <h3>Problem 6C</h3>
+            <h3>Problem 5C</h3>
 
             <p>Why must restrictions be identified from the original rational expression?</p>
 
-            <select id="p6c">
+            <select id="p5c">
                 <option value="">Choose an answer</option>
                 <option value="cancel">Canceled factors erase all restrictions</option>
                 <option value="zero">The original denominator cannot equal zero</option>
@@ -752,7 +663,7 @@ button:disabled {
     <!-- SUBMIT -->
 
     <section class="card yellow-card">
-        <h2 style="margin-top:0; color:#0f2d44;">Submit Your Prove It!</h2>
+        <h2 style="margin-top: 0; color: #0f2d44;">Submit Your Prove It!</h2>
 
         <p>Review every section before submitting.</p>
 
@@ -825,8 +736,13 @@ function parenthesesWrapWholeExpression(text) {
     let depth = 0;
 
     for (let i = 0; i < text.length; i++) {
-        if (text[i] === "(") depth++;
-        if (text[i] === ")") depth--;
+        if (text[i] === "(") {
+            depth++;
+        }
+
+        if (text[i] === ")") {
+            depth--;
+        }
 
         if (depth === 0 && i < text.length - 1) {
             return false;
@@ -852,7 +768,10 @@ function stripOuterParentheses(value) {
 
 function matches(value, acceptedAnswers) {
     const normalizedValue = normalize(value);
-    return acceptedAnswers.map(normalize).includes(normalizedValue);
+
+    return acceptedAnswers
+        .map(normalize)
+        .includes(normalizedValue);
 }
 
 function matchesWithoutOuterParentheses(value, acceptedAnswers) {
@@ -874,7 +793,11 @@ function valuesMatchAnyOrder(values, answers) {
 }
 
 function makeCompletionCode() {
-    return "U3W2-" + Math.random().toString(36).substring(2, 7).toUpperCase();
+    return "U3W2-" +
+        Math.random()
+            .toString(36)
+            .substring(2, 7)
+            .toUpperCase();
 }
 
 function part1Correct() {
@@ -919,63 +842,23 @@ function part1Correct() {
 }
 
 function part2Correct() {
-    const factoredCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p2factored").value,
-        [
-            "(x-1)(x+1)",
-            "(x+1)(x-1)"
-        ]
-    );
-
-    const numeratorCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p2numerator").value,
-        [
-            "3x+3",
-            "3(x+1)",
-            "4(x+1)-(x+1)"
-        ]
-    );
+    const processCorrect =
+        document.getElementById("p2process").value === "reciprocal";
 
     const finalCorrect = matches(
         document.getElementById("p2final").value,
         [
-            "3/(x-1)",
-            "(3)/(x-1)"
+            "2x(x+5)/(x+3)",
+            "(2x(x+5))/(x+3)",
+            "(2x^2+10x)/(x+3)"
         ]
     );
 
     const restrictionsCorrect = valuesMatchAnyOrder(
         [
             document.getElementById("p2r1").value,
-            document.getElementById("p2r2").value
-        ],
-        ["1", "-1"]
-    );
-
-    return factoredCorrect &&
-        numeratorCorrect &&
-        finalCorrect &&
-        restrictionsCorrect;
-}
-
-function part3Correct() {
-    const processCorrect =
-        document.getElementById("p3process").value === "reciprocal";
-
-    const finalCorrect = matches(
-        document.getElementById("p3final").value,
-        [
-            "2x(x+5)/(x+3)",
-            "(2x(x+5))/(x+3)",
-            "2x(x+5)/(x+3)"
-        ]
-    );
-
-    const restrictionsCorrect = valuesMatchAnyOrder(
-        [
-            document.getElementById("p3r1").value,
-            document.getElementById("p3r2").value,
-            document.getElementById("p3r3").value
+            document.getElementById("p2r2").value,
+            document.getElementById("p2r3").value
         ],
         ["-3", "0", "5"]
     );
@@ -985,14 +868,14 @@ function part3Correct() {
         restrictionsCorrect;
 }
 
-function part4Correct() {
+function part3Correct() {
     const easyRestrictionCorrect = matches(
-        document.getElementById("p4ar").value,
+        document.getElementById("p3ar").value,
         ["-1"]
     );
 
     const easyClearedCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p4acleared").value,
+        document.getElementById("p3acleared").value,
         [
             "8=4(x+1)",
             "4(x+1)=8"
@@ -1000,58 +883,57 @@ function part4Correct() {
     );
 
     const easySolutionCorrect = matches(
-        document.getElementById("p4asolution").value,
+        document.getElementById("p3asolution").value,
         ["1"]
     );
 
-    const mediumRestrictionsCorrect = valuesMatchAnyOrder(
+    const moderateRestrictionsCorrect = valuesMatchAnyOrder(
         [
-            document.getElementById("p4br1").value,
-            document.getElementById("p4br2").value
+            document.getElementById("p3br1").value,
+            document.getElementById("p3br2").value
         ],
-        ["0", "2"]
+        ["0", "-2"]
     );
 
-    const mediumLCDCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p4blcd").value,
+    const moderateLCDCorrect = matchesWithoutOuterParentheses(
+        document.getElementById("p3blcd").value,
         [
-            "x(x-2)",
-            "(x-2)x",
-            "x^2-2x"
+            "x(x+2)",
+            "(x+2)x",
+            "x^2+2x"
         ]
     );
 
-    const mediumClearedCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p4bcleared").value,
+    const moderateClearedCorrect = matchesWithoutOuterParentheses(
+        document.getElementById("p3bcleared").value,
         [
-            "3(x-2)-2x=2",
-            "-2x+3(x-2)=2",
-            "x-6=2"
+            "(x+2)+x=3",
+            "x+(x+2)=3",
+            "x+x+2=3",
+            "2x+2=3"
         ]
     );
 
-    const mediumSolutionCorrect = matches(
-        document.getElementById("p4bsolution").value,
-        ["8"]
+    const moderateSolutionCorrect = matches(
+        document.getElementById("p3bsolution").value,
+        [
+            "1/2",
+            "0.5"
+        ]
     );
-
-    const restrictedValueCorrect =
-        matches(document.getElementById("p4cr").value, ["5"]) &&
-        document.getElementById("p4cresult").value === "nosolution";
 
     return easyRestrictionCorrect &&
         easyClearedCorrect &&
         easySolutionCorrect &&
-        mediumRestrictionsCorrect &&
-        mediumLCDCorrect &&
-        mediumClearedCorrect &&
-        mediumSolutionCorrect &&
-        restrictedValueCorrect;
+        moderateRestrictionsCorrect &&
+        moderateLCDCorrect &&
+        moderateClearedCorrect &&
+        moderateSolutionCorrect;
 }
 
-function part5Correct() {
+function part4Correct() {
     const easySquaredCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p5asquared").value,
+        document.getElementById("p4asquared").value,
         [
             "x+8=36",
             "36=x+8"
@@ -1059,12 +941,12 @@ function part5Correct() {
     );
 
     const easySolutionCorrect = matches(
-        document.getElementById("p5asolution").value,
+        document.getElementById("p4asolution").value,
         ["28"]
     );
 
-    const mediumSquaredCorrect = matchesWithoutOuterParentheses(
-        document.getElementById("p5bsquared").value,
+    const moderateSquaredCorrect = matchesWithoutOuterParentheses(
+        document.getElementById("p4bsquared").value,
         [
             "2x+8=x^2",
             "x^2=2x+8",
@@ -1074,34 +956,34 @@ function part5Correct() {
 
     const possibleSolutionsCorrect = valuesMatchAnyOrder(
         [
-            document.getElementById("p5bpossible1").value,
-            document.getElementById("p5bpossible2").value
+            document.getElementById("p4bpossible1").value,
+            document.getElementById("p4bpossible2").value
         ],
         ["4", "-2"]
     );
 
     const validCorrect = matches(
-        document.getElementById("p5bvalid").value,
+        document.getElementById("p4bvalid").value,
         ["4"]
     );
 
     const extraneousCorrect = matches(
-        document.getElementById("p5bextraneous").value,
+        document.getElementById("p4bextraneous").value,
         ["-2"]
     );
 
     return easySquaredCorrect &&
         easySolutionCorrect &&
-        mediumSquaredCorrect &&
+        moderateSquaredCorrect &&
         possibleSolutionsCorrect &&
         validCorrect &&
         extraneousCorrect;
 }
 
-function part6Correct() {
-    return document.getElementById("p6a").value === "lcd" &&
-        document.getElementById("p6b").value === "extraneous" &&
-        document.getElementById("p6c").value === "zero";
+function part5Correct() {
+    return document.getElementById("p5a").value === "lcd" &&
+        document.getElementById("p5b").value === "extraneous" &&
+        document.getElementById("p5c").value === "zero";
 }
 
 function allCorrect() {
@@ -1109,14 +991,18 @@ function allCorrect() {
         part2Correct() &&
         part3Correct() &&
         part4Correct() &&
-        part5Correct() &&
-        part6Correct();
+        part5Correct();
 }
 
 function submitProveIt() {
-    const firstName = document.getElementById("firstName").value.trim();
-    const lastName = document.getElementById("lastName").value.trim();
-    const feedback = document.getElementById("submitFeedback");
+    const firstName =
+        document.getElementById("firstName").value.trim();
+
+    const lastName =
+        document.getElementById("lastName").value.trim();
+
+    const feedback =
+        document.getElementById("submitFeedback");
 
     if (!firstName || !lastName) {
         feedback.textContent =
